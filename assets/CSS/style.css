@@ -1,0 +1,102 @@
+/*Typografi*/
+/*overskrift font. Fra google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*Brødtekst*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*variabler*/
+:root{
+    /*Farve variabler*/
+    --softBrown: #5E544A;
+    --backgroundColor: #F3EFE7;
+    --textColor: #4D4743;
+    --mossGreen: #566A5A;
+    --warmYellow: #E0BF90;
+    
+    /*spacing variabler*/
+    --space_mobilSmall: 8px;
+    --space_mobilMediumElementer: 16px;
+    --space_mobillargeIndhold: 24px;
+    --space_mobilSection: 32px;
+    
+    /*omdøm så det passer med figma*/
+    --space_desktopSmall: 15px;
+    --space_desktopMediumElementer: 25px;
+    --space_desktoplargeIndhold: 50px;
+    --space_desktopSection: 75px;
+    
+    /*Font sizes*/
+    --mobil_fs_h1: 1.5rem;
+    --mobil_fs_h2: 1.25rem;
+    --mobil_fs_h3: 1rem;
+    --mobil_fs_p: 1rem;
+    
+    --desktop_fs_h1: 3.5rem;
+    --desktop_fs_h2: 3rem;
+    --desktop_fs_h3: 2.5rem;
+    --desktop_fs_p: 1.125rem;
+
+    /*Font styles*/
+    
+    /*border radius*/
+    --border_radius_image: 5px;
+    
+    
+}
+
+/*Generelt styling*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    background-color: var(--backgroundColor);
+}
+
+h1, h2, h3, h4{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+h1 {
+    font-size: var(--mobil_fs_h1);
+}
+
+h2 {
+    font-size: var(--mobil_fs_h2);
+}
+
+h3 {
+    font-size: var(--mobil_fs_h3);
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--mobil_fs_p);
+}
+
+@media  screen and (min-width: 900px) {
+    h1{
+        font-size: var(--desktop_fs_h1);
+    }
+    h2{
+        font-size: var(--desktop_fs_h2) ;
+    }
+    h3{
+        font-size: var(--desktop_fs_h3);
+    }
+    p{
+        font-family: "Montserrat", sans-serif;
+        font-size: var(--desktop_fs_p);
+    }
+}
+
+/*buttons*/
+
+
+/*Forsiden*/
+
+/*Undersider*/
+
+/*Komponenter*/
