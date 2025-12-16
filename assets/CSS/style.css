@@ -1,63 +1,58 @@
-/*Typografi*/
-/*overskrift font. Fra google fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-/*Brødtekst*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* =========================
+   FONTS
+   ========================= */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-/*variabler*/
-:root{
-    /*Farve variabler*/
-    --softBrown: #5E544A;
-    --backgroundColor: #F3EFE7;
-    --textColor: #4D4743;
-    --mossGreen: #566A5A;
-    --warmYellow: #E0BF90;
-    
-    /*spacing variabler*/
+/* =========================
+   VARIABLER
+   ========================= */
+:root {
+    --softBrown: #5e544a;
+    --backgroundColor: #f3efe7;
+    --textColor: #4d4743;
+    --mossGreen: #566a5a;
+    --warmYellow: #e0bf90;
+
     --space_mobilSmall: 8px;
     --space_mobilMediumElementer: 16px;
     --space_mobillargeIndhold: 24px;
     --space_mobilSection: 32px;
-    
-    /*omdøm så det passer med figma*/
-    --space_desktopSmall: 15px;
-    --space_desktopMediumElementer: 25px;
-    --space_desktoplargeIndhold: 50px;
-    --space_desktopSection: 75px;
-    
-    /*Font sizes*/
+
     --mobil_fs_h1: 1.5rem;
     --mobil_fs_h2: 1.25rem;
     --mobil_fs_h3: 1rem;
     --mobil_fs_p: 1rem;
-    
+
     --desktop_fs_h1: 3.5rem;
     --desktop_fs_h2: 3rem;
     --desktop_fs_h3: 2.5rem;
     --desktop_fs_p: 1.125rem;
 
-    /*Font styles*/
-    
-    /*border radius*/
     --border_radius_image: 5px;
-    
-    
 }
 
-/*Generelt styling*/
-*{
+/* =========================
+   RESET / BASE
+   ========================= */
+* {
     box-sizing: border-box;
     margin: 0;
-    background-color: var(--backgroundColor);
 }
 
-h1, h2, h3, h4{
+body {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+}
+
+h1,
+h2,
+h3,
+h4 {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-
-
 
 h1 {
     font-size: var(--mobil_fs_h1);
@@ -76,27 +71,228 @@ p {
     font-size: var(--mobil_fs_p);
 }
 
-@media  screen and (min-width: 900px) {
-    h1{
+@media screen and (min-width: 900px) {
+    h1 {
         font-size: var(--desktop_fs_h1);
     }
-    h2{
-        font-size: var(--desktop_fs_h2) ;
+
+    h2 {
+        font-size: var(--desktop_fs_h2);
     }
-    h3{
+
+    h3 {
         font-size: var(--desktop_fs_h3);
     }
-    p{
-        font-family: "Montserrat", sans-serif;
+
+    p {
         font-size: var(--desktop_fs_p);
     }
 }
 
-/*buttons*/
+/*  VÆRELSE SIDEN */
+.room-page {
+    padding: var(--space_mobilSection) var(--space_mobillargeIndhold);
+}
+
+.room-header h1 {
+    margin-bottom: var(--space_mobilMediumElementer);
+}
+
+/* Billed karusel */
+.room-images {
+    position: relative;
+    margin-bottom: var(--space_mobilSection);
+}
+
+.room-image {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.room-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* pile */
+.image-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    border: none;
+    cursor: pointer;
+
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.image-arrow--left {
+    left: 10px;
+}
+
+.image-arrow--right {
+    right: 10px;
+}
+
+/* ikoner (mangler stadig)  */
+.room-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-bottom: var(--space_mobilSection);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: calc(50% - 12px);
+}
+
+.feature img {
+    width: 20px;
+    height: 20px;
+}
+
+.feature p {
+    font-size: 0.875rem;
+}
+
+/* værelses beskrivelse og cta */
+.room-text p {
+    line-height: 1.6;
+    margin-bottom: var(--space_mobilSection);
+}
+
+.room-booking {
+    display: block;
+    text-align: center;
+
+    padding: 14px;
+    border-radius: 10px;
+
+    background-color: var(--mossGreen);
+    color: #fff;
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+/* Andre værelser nederst  */
+
+.room-more {
+    margin-top: var(--space_mobilSection);
+}
+
+.room-more h2 {
+    margin-bottom: var(--space_mobilMediumElementer);
+}
+
+/* GENBRUG: KARRUSEL + ROOM-CARDS (samme komponent som på værelser-siden)  */
+
+.rooms__list {
+    display: flex;
+    gap: var(--space_mobilMediumElementer);
+    overflow-x: auto;
+    padding-bottom: var(--space_mobilMediumElementer);
+    padding-right: 0px;
+}
+
+.room-card {
+    position: relative;
+    min-width: 260px;
+    height: 520px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.room-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.room-card__overlay {
+    position: absolute;
+    inset: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 0;
+    background: transparent;
+    color: #fff;
+}
+
+.room-card__title {
+    font-size: var(--desktop_fs_h3);
+    line-height: 0.95;
+    letter-spacing: 1px;
+    background: transparent;
+}
+
+.room-card__facts {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: transparent;
+}
+
+.pill {
+    width: fit-content;
+    padding: 6px 14px;
+    border-radius: 14px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    color: #fff;
+
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
 
 
-/*Forsiden*/
+.room-card__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
 
-/*Undersider*/
+    height: 56px;
+    border-radius: 14px;
+    text-decoration: none;
 
-/*Komponenter*/
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--mobil_fs_p);
+    color: #fff;
+
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+@media (hover: hover) {
+    .room-card__cta:hover {
+        background: rgba(255, 255, 255, 0.22);
+        transform: translateY(-2px);
+        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.30);
+    }
+}
