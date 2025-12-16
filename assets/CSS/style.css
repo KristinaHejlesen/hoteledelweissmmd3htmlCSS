@@ -98,6 +98,8 @@ p {
 nav{
     display: flex;
     align-items:center ;
+    justify-content: space-between;
+   
 }
 .globalNav{
     display: flex;
@@ -124,7 +126,7 @@ nav{
     /*vi placere dropdwn indholdet i toppen og til venstre*/
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
 /*sætter width til 100% så den følger knappens bredde i dropdown*/
     width: 100%;
     background-color: var(--backgroundColor);
@@ -133,27 +135,30 @@ nav{
         padding: 1rem;
     }
 }
-.dropdown:hover .dropdownIndhold{
+/* .dropdown:hover .dropdownIndhold{
     display: flex;
-}
+} */
+
 .dropdown{
     position: relative;
 }
 .dropbtn{
     border: none;
 }
-.btn_book{
-    position: absolute;
-    left:50%;
+/*class der sættes på dropdown links div, når der klikkes på knappen*/
+.show{
+    display: flex;
 }
 /*mobil nav*/
 @media screen and (max-width: 900px){
     #menu{
         display: flex;
+        /*sørger for at burgermenu ikke forsvinder bagved*/
+        z-index: 1000;
     }
     .globalNav{
         display: none;
-        justify-content: space-between;
+        /* justify-content: space-between; */
     }
     .globalNav.active{
         display: flex;
@@ -162,15 +167,31 @@ nav{
         flex-direction: column;
         position: absolute;
         right: 0;
-        top: 8%;
-        width: 50%;
+        top: 0%;
+        width: 40%;
+        background-color: var(--warmYellow);
+        padding: 1rem;
+        z-index: 1000;
+        li, a, .dropbtn, .dropdown, .fa-solid {
+            background-color: var(--warmYellow);
+        }
     }
     nav{
-        justify-content: space-between;
+        align-items: flex-start;
     }
     /*så den ikke går over indholdet, men skubber indholdet ned i menuen på mobil*/
     .dropdownIndhold{
         position: relative;
+    }
+    /*book knap forsiden*/
+    /*placering af knappen i midten, ellers vil den hoppe/flytte sig når der trykkes/åbnes mobil nav*/
+    .btn_book{
+        position: absolute;
+        right:20%;
+    }
+    /*sikre at vores dropdown btn står pænt til venstre, sammen med de andre links*/
+    .dropbtn{
+        padding-left: 0;
     }
 }
 /*Forsiden*/
