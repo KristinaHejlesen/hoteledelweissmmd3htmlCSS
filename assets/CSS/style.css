@@ -94,7 +94,85 @@ p {
 
 /*buttons*/
 
-
+/*Global navigation*/
+nav{
+    display: flex;
+    align-items:center ;
+}
+.globalNav{
+    display: flex;
+    a{
+        text-decoration: none;
+        color: var(--textColor);
+    }
+}
+#menu{
+    display: none;
+}
+.navcontainer{
+    ul{
+        display: flex;
+        gap: 1rem;
+    }
+    li{
+        list-style-type: none;
+    }
+}
+.dropdownIndhold{
+    display: none;
+    flex-direction: column;
+    /*vi placere dropdwn indholdet i toppen og til venstre*/
+    position: absolute;
+    top: 100%;
+    left: 0;
+/*sætter width til 100% så den følger knappens bredde i dropdown*/
+    width: 100%;
+    background-color: var(--backgroundColor);
+    a{
+        border: solid 2px var(--textColor);
+        padding: 1rem;
+    }
+}
+.dropdown:hover .dropdownIndhold{
+    display: flex;
+}
+.dropdown{
+    position: relative;
+}
+.dropbtn{
+    border: none;
+}
+.btn_book{
+    position: absolute;
+    left:50%;
+}
+/*mobil nav*/
+@media screen and (max-width: 900px){
+    #menu{
+        display: flex;
+    }
+    .globalNav{
+        display: none;
+        justify-content: space-between;
+    }
+    .globalNav.active{
+        display: flex;
+    }
+    .navcontainer ul{
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 8%;
+        width: 50%;
+    }
+    nav{
+        justify-content: space-between;
+    }
+    /*så den ikke går over indholdet, men skubber indholdet ned i menuen på mobil*/
+    .dropdownIndhold{
+        position: relative;
+    }
+}
 /*Forsiden*/
 
 /*Undersider*/
