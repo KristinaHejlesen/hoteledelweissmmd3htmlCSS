@@ -263,7 +263,6 @@ p {
 /* Info box */
 .info-box {
   margin-top: var(--space_mobilSection);
-  padding: var(--space_mobilSection);
   border-radius: 8px;
   color: var(--textColor)
 }
@@ -273,6 +272,7 @@ p {
 
 .info-box p {
   margin-bottom: var(--space_mobilMediumElementer);
+
 }
 
 .btn-info {
