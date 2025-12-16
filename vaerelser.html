@@ -6,13 +6,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Edeleweiss</title>
     <link rel="stylesheet" href="./assets/CSS/style.css">
-    <script src="./assets/JS/app.js" defer></script>
+    <script src="./assets/JS/roomFilter.js" defer></script>
     <!--fontawesom iconer-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+<main>
+    <section class="rooms">
     
+        <header class="rooms__header">
+            <h1>VÆRELSER PÅ EDELWEISS</h1>
+            <p>
+                Hos Hotel Edelweiss tilbyder vi en række forskellige værelser og lejligheder –
+                lige fra det hyggelige enkeltværelse til rummelige lejligheder med plads til op til 8 personer.
+                Alle vores værelser og lejligheder er indrettet i en charmerende, klassisk østrigsk stil,
+                hvor vi har tilført lidt dansk hygge og personlighed.
+            </p>
+        </header>
+    
+        <div class="rooms__tabs">
+            <button class="tab active" data-type="standart">STANDARTVÆRELSER</button>
+            <button class="tab" data-type="familie">FAMILIEVÆRELSER</button>
+            <button class="tab" data-type="lejligheder">LEJLIGHEDER</button>
+        </div>
+    
+        <div class="rooms__list">
+            <!-- STANDARTVÆRELSER -->
+        
+            <article class="room-card" data-type="standart">
+                <img src="./assets/img/Enkelt_altan_1.jpg" alt="Enkeltværelse med altan">
+                <div class="room-card__overlay">
+                    <h3 class="room-card__title">ENKELTVÆRELSE M. ALTAN</h3>
+        
+                    <div class="room-card__facts">
+                        <span class="pill">☆ Enkelseng</span>
+                        <span class="pill">☆ Op til 3 personer</span>
+                    </div>
+        
+                    <a href="#" class="room-card__cta">
+                        Flere detaljer <span>→</span>
+                    </a>
+                </div>
+            </article>
+        
+            <article class="room-card" data-type="standart">
+                <img src="./assets/img/Billede-24.06.2025-08.34.58.jpg" alt="Dobbeltværelse med altan">
+                <div class="room-card__overlay">
+                    <h3 class="room-card__title">DOBBELTVÆRELSE M. ALTAN</h3>
+        
+                    <div class="room-card__facts">
+                        <span class="pill">☆ Dobbeltseng</span>
+                        <span class="pill">☆ Op til 3 personer</span>
+                    </div>
+        
+                    <a href="#" class="room-card__cta">
+                        Flere detaljer <span>→</span>
+                    </a>
+                </div>
+            </article>
+                <article class="room-card" data-type="standart">
+                    <img src="./assets/img/Ekstra_Stort_Dobbelt_1.jpg" alt="Dobbeltværelse">
+                    <div class="room-card__overlay">
+                        <h3 class="room-card__title">DOBBELTVÆRELSE</h3>
+                
+                        <div class="room-card__facts">
+                            <span class="pill">☆ Dobbeltseng</span>
+                            <span class="pill">☆ Op til 3 personer</span>
+                        </div>
+                
+                        <a href="#" class="room-card__cta">
+                            Flere detaljer <span>→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- FAMILIEVÆRELSER -->
+                
+                <article class="room-card" data-type="familie">
+                    <img src="./assets/img/Billede-24.06.2025-16.08.11-2.jpg" alt="Familieværelse">
+                    <div class="room-card__overlay">
+                        <h3 class="room-card__title">FAMILIEVÆRELSE</h3>
+                        <div class="room-card__facts">
+                            <span class="pill">☆ Dobbeltseng</span>
+                            <span class="pill">☆ Op til 3 personer</span>
+                        </div>
+                        <a href="#" class="room-card__cta">Flere detaljer <span>→</span></a>
+                    </div>
+                </article>
+                
+                <article class="room-card" data-type="familie">
+                    <img src="./assets/img/Billede-24.06.2025-16.08.16-2.jpg" alt="Familieværelse med altan">
+                    <div class="room-card__overlay">
+                        <h3 class="room-card__title">FAMILIEVÆRELSE M. ALTAN</h3>
+                        <div class="room-card__facts">
+                            <span class="pill">☆ Dobbeltseng</span>
+                            <span class="pill">☆ Op til 3 personer</span>
+                        </div>
+                        <a href="#" class="room-card__cta">Flere detaljer <span>→</span></a>
+                    </div>
+                </article>
+                
+                <article class="room-card" data-type="familie">
+                    <img src="./assets/img/Billede-24.06.2025-16.08.26-2.jpg" alt="Stort familieværelse med altan">
+                    <div class="room-card__overlay">
+                        <h3 class="room-card__title">STORT FAMILIEVÆRELSE M. ALTAN</h3>
+                        <div class="room-card__facts">
+                            <span class="pill">☆ Dobbeltseng</span>
+                            <span class="pill">☆ Op til 4 personer</span>
+                        </div>
+                        <a href="#" class="room-card__cta">Flere detaljer <span>→</span></a>
+                    </div>
+                </article>
+                
+                <article class="room-card" data-type="familie">
+                    <img src="./assets/img/Billede-24.06.2025-16.08.11.jpg" alt="2-værelses familieværelse med altan">
+                    <div class="room-card__overlay">
+                        <h3 class="room-card__title">2-VÆRELSES FAMILIEVÆRELSE MED ALTAN</h3>
+                        <div class="room-card__facts">
+                            <span class="pill">☆ Dobbelt + 4 enkelt-senge</span>
+                            <span class="pill">☆ Op til 6 personer</span>
+                        </div>
+                        <a href="#" class="room-card__cta">Flere detaljer <span>→</span></a>
+                    </div>
+                </article>
+                
+                <!-- LEJLIGHEDER -->
+                
+                <article class="room-card" data-type="lejligheder">
+                    <img src="./assets/img/Billede-24.06.2025-08.34.58.jpg" alt="4-værelses lejlighed">
+                    <div class="room-card__overlay">
+                        <h3 class="room-card__title">4-VÆRELSES LEJLIGHED</h3>
+                        <div class="room-card__facts">
+                            <span class="pill">☆ 2 dobbeltsenge</span>
+                            <span class="pill">☆ Op til 8 personer</span>
+                        </div>
+                        <a href="#" class="room-card__cta">Flere detaljer <span>→</span></a>
+                    </div>
+                </article>
+
+        
+        </div>
+
+    
+        <section class="info-box">
+            <h2>HAR DU SPØRGSMÅL TIL DIT OPHOLD?</h2>
+            <p>
+                Som familiehotel ved vi, at en god rejse starter hjemmefra.
+                Vi har samlet svar på de spørgsmål, vi oftest får, så du kan pakke,
+                planlægge og glæde dig, uden bekymringer.
+            </p>
+    
+            <a href="#" class="btn-info">
+                Værd at vide   →
+            </a>
+        </section>
+    
+    </section>
+
+</main>
 </body>
 </html>
