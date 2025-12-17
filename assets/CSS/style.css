@@ -81,6 +81,7 @@ p {
     font-family: "Montserrat", sans-serif;
     font-size: var(--mobil_fs_p);
     padding-top: var(--space_mobilSmall);
+    line-height: 150%;
 }
 
 @media  screen and (min-width: 900px) {
