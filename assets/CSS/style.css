@@ -18,12 +18,14 @@
     --space_mobilMediumElementer: 16px;
     --space_mobillargeIndhold: 24px;
     --space_mobilSection: 32px;
+    --margin_mobil: 0.625rem;
     
-    /*omdøm så det passer med figma*/
+    /*desktop*/
     --space_desktopSmall: 15px;
     --space_desktopMediumElementer: 25px;
     --space_desktoplargeIndhold: 50px;
     --space_desktopSection: 75px;
+    --margin_desktop: 7.5rem;
     
     /*Font sizes*/
     --mobil_fs_h1: 1.5rem;
@@ -59,39 +61,49 @@ h1, h2, h3, h4, a, button{
 
 h1 {
     font-size: var(--mobil_fs_h1);
+    padding-top: var(--space_mobilSection);
 }
 
 h2 {
     font-size: var(--mobil_fs_h2);
+    padding-top: var(--space_mobilSection);
 }
 
 h3 {
     font-size: var(--mobil_fs_h3);
+    padding-top: var(--space_mobilSection);
 }
 
 p {
     font-family: "Montserrat", sans-serif;
     font-size: var(--mobil_fs_p);
+    padding-top: var(--space_mobilSmall);
 }
 
 @media  screen and (min-width: 900px) {
     h1{
         font-size: var(--desktop_fs_h1);
-    }
-    h2{
-        font-size: var(--desktop_fs_h2) ;
-    }
-    h3{
+        padding-top: var(--space_desktopSection);
+      }
+      h2{
+        font-size: var(--desktop_fs_h2);
+        padding-top: var(--space_desktopSection);
+        
+      }
+      h3{
         font-size: var(--desktop_fs_h3);
+        padding-top: var(--space_desktopSection);
     }
     p{
         font-family: "Montserrat", sans-serif;
         font-size: var(--desktop_fs_p);
+        padding-top: var(--space_desktopSmall);
     }
 }
 section{
-    margin-inline: 7.5rem;
+    margin-inline: var(--margin_mobil);
 }
+
 /*buttons*/
 .btn_book{
     background-color: var(--mossGreen);
@@ -167,6 +179,9 @@ nav{
 .dropdownAnimation {
     transform: rotate(270deg);
 }
+
+/**/
+
 .dropdown{
     position: relative;
     
@@ -219,11 +234,7 @@ nav{
         position: relative;
     }
     /*book knap forsiden*/
-    /*placering af knappen i midten, ellers vil den hoppe/flytte sig når der trykkes/åbnes mobil nav*/
     .btn_book{
-        position: absolute;
-        right:20%;
-        top: 5%;
         font-size: 0.875rem;
         padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     }
@@ -254,56 +265,105 @@ nav{
         #menu.active{
             background-color: var(--warmYellow);
         }
+        #logo{
+          width: 30vw;
+        }
 }
 
 /*Forsiden*/
 .heroimage{
-    max-width: 100vw;
-    max-height: 80vh;
-   
+    max-width: 100%;
+    max-height: 75vh;  
 }
+
+/*videoen fylder 100% af div heroimage den er i*/
 video{
-    height: 80vh;
+    height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-/*Forsiden cards sektion Oplevelser*/
-/*Skal lige rette her i forhold til at designe mobile first!*/
-@media screen and (min-width: 900px) {
-    
-.forsidenCards{
-    width: 36.875rem;
-    height: 23.25rem;
-    position: relative;
-    border-radius: var(--border_radius_image);
-    overflow: hidden;
-    img{
-        max-width: 100%;
-    }
+/*Forsiden cards sektion Oplevelser mobil*/
+.forsidenCardsTekst {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: none;
+  color: white;
 }
+
+.fa-arrow-right-long {
+  color: white;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  font-size: 0.625rem;
+}
+
+.forsidenCards {
+  width: 100%;
+  /*aspect-ratio beskriver forholdet - bredde/højde forholdet*/
+  aspect-ratio: 3 / 2;
+  position: relative;
+  
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border_radius_image);
+  }
+}
+
+.forsidenCardsTekst {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*sætter tetksten i midten, istedet for det foørste bogstav*/
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*desktop*/
+@media screen and (min-width: 900px) {
+  /*Sørger for at indholdet ikke strækker på store skærme*/
+.contentContainer{
+  max-width: 1220px;
+  margin: 0 auto;
+  padding-inline: var(--margin_desktop);
+    
+}
+.heroimage {
+  max-width: 100%;
+  height: 80vh;
+}
+#introtekstForsiden{
+  max-width: 50rem;
+}
+#h1_forsiden{
+  padding-top: var(--space_desktopMediumElementer);
+}
+
 .forsidenCardsTekst{
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     font-size: 3rem;
-    position: absolute;
     top: 50%;
     left: 50%;
-    /*sætter tetksten i midten, istedet for det foørste bogstav*/
-    transform: translate(-50%,50%);
-    background: none;
-    color: white;
+}
+.forsidenCards {
+  max-width: 37rem;
+  position: relative;
 }
 .fa-arrow-right-long{
-    color: white;
-    position: absolute;
+    /* position: absolute; */
     top: 70%;
     left: 50%;
-    transform: translate(-50%, 50%);
-    background: none;
-    font-size: 2rem;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
 }
+
 .forsidenContainerCards{
     display: flex;
     gap: var(--space_desktopMediumElementer);

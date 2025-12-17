@@ -25,13 +25,13 @@
   });
   
   /*dropdown animation.. virker ikke!!! OBS nodelist.. skal loopes igennem!*/
-  const ikon = document.querySelectorAll(".animatepil");
-  ikon.forEach((ikon) =>{
-    btn.addEventListener("click", () =>{
-      ikon.classList.toggle("dropdownAnimation");
+  // const ikon = document.querySelectorAll(".animatepil");
+  // ikon.forEach((ikon) =>{
+  //   btn.addEventListener("click", () =>{
+  //     ikon.classList.toggle("dropdownAnimation");
 
-    });
+  //   });
 
-  });
+  // });
 
  
