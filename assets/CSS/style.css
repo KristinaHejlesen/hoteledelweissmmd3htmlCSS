@@ -106,12 +106,17 @@ nav button, a{
     font-size: 1.5rem;
     color: var(--textColor);
 }
+ nav a:hover,
+ button:hover, .dropdownIndhold a:hover{
+     color: var(--mossGreen);
+ }
 /*Global navigation*/
 nav{
     display: flex;
     align-items:center ;
     justify-content: space-between;
     padding-inline: var(--space_desktopMediumElementer);
+  
    
 }
 .globalNav{
@@ -123,7 +128,9 @@ nav{
 }
 #menu{
     display: none;
+    border: none;
 }
+
 .navcontainer{
     ul{
         display: flex;
@@ -136,24 +143,33 @@ nav{
 .dropdownIndhold{
     display: none;
     flex-direction: column;
-    /*vi placere dropdwn indholdet i toppen og til venstre*/
+    /*vi placere dropdown indholdet i toppen og til venstre*/
     position: absolute;
     top: 100%;
     right: 0;
 /*sætter width til 100% så den følger knappens bredde i dropdown*/
     width: 100%;
     background-color: var(--backgroundColor);
+    border-radius: 5px;
+    /*skjuler alt der er udenfor boksen f.eks div, der gør så border-radius ikke kan ses.*/
+    overflow: hidden;
+    z-index: 1000;
+   
     a{
-        border: solid 2px var(--textColor);
+        /* border: solid 2px var(--textColor); */
+        border-bottom: solid 1px var(--textColor);
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
         padding: 1rem;
     }
 }
-/* .dropdown:hover .dropdownIndhold{
-    display: flex;
-} */
-
+/*VIKER IKKE ENDNU!*/
+/*functionel animation pil ikon skifter  dropdown menu*/
+.dropdownAnimation {
+    transform: rotate(270deg);
+}
 .dropdown{
     position: relative;
+    
 }
 .dropbtn{
     border: none;
@@ -171,7 +187,7 @@ nav{
     }
     .globalNav{
         display: none;
-        /* justify-content: space-between; */
+        
     }
     .globalNav.active{
         display: flex;
@@ -189,12 +205,13 @@ nav{
         li, a, .dropbtn, .dropdown, .fa-solid {
             background-color: var(--warmYellow);
         }
-      li{
-        padding-top: var(--space_mobilMediumElementer);
-      }
+    }
+/*vælger den første li i ul og tilføjer padding så links rykkes længere ned*/
+    .navcontainer ul li:first-of-type{
+      padding-top: 3.5rem;
     }
     nav{
-        align-items: flex-start;
+        align-items: center;
         padding-top: 1.25rem;
     }
     /*så den ikke går over indholdet, men skubber indholdet ned i menuen på mobil*/
@@ -206,6 +223,7 @@ nav{
     .btn_book{
         position: absolute;
         right:20%;
+        top: 5%;
         font-size: 0.875rem;
         padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     }
@@ -213,7 +231,31 @@ nav{
     .dropbtn{
         padding-left: 0;
     }
+    /*animation af menu fra tre streger til kryds*/
+    #linje1, #linje2, #linje3{
+        transition: transform;
+        /*animationen skal foregå fra midten/centrum*/
+        transform-origin: center;
+    }
+    /*rotere 45 grader og flyt 5 px ned*/
+        #menu.active #linje1{
+            transform: translateY(5px) rotate(45deg);
+        }
+        /*gør linjen usynlig*/
+         #menu.active #linje2{
+            opacity: 0;
+        }
+         #menu.active #linje3{
+            transform: translateY(-5px) rotate(-45deg);
+        }
+        #menu.active svg{
+         background-color: var(--warmYellow);
+        }
+        #menu.active{
+            background-color: var(--warmYellow);
+        }
 }
+
 /*Forsiden*/
 .heroimage{
     max-width: 100vw;
@@ -224,6 +266,48 @@ video{
     height: 80vh;
     width: 100%;
     object-fit: cover;
+}
+
+/*Forsiden cards sektion Oplevelser*/
+/*Skal lige rette her i forhold til at designe mobile first!*/
+@media screen and (min-width: 900px) {
+    
+.forsidenCards{
+    width: 36.875rem;
+    height: 23.25rem;
+    position: relative;
+    border-radius: var(--border_radius_image);
+    overflow: hidden;
+    img{
+        max-width: 100%;
+    }
+}
+.forsidenCardsTekst{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*sætter tetksten i midten, istedet for det foørste bogstav*/
+    transform: translate(-50%,50%);
+    background: none;
+    color: white;
+}
+.fa-arrow-right-long{
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background: none;
+    font-size: 2rem;
+}
+.forsidenContainerCards{
+    display: flex;
+    gap: var(--space_desktopMediumElementer);
+}
 }
 /*Undersider*/
 
