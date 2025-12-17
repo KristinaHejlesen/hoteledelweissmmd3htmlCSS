@@ -24,6 +24,23 @@
     });
   });
   
+/*lukker dropdown når der klikkes udenfor boksen */
+/*kode lavet med hjælp fra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar_click */
+window.onclick = function(luk) {
+  /*hvis det der klikkes på i winduet ikke har class dropbtn, altås vi trykker ikke på knappen, gør følgende */
+  if(!luk.target.matches('.dropbtn')){
+    const dropdownIndhold = document.querySelectorAll('.dropdownIndhold');
+    /*for hver element med class dropdownindhold(det er vores dropdown kasse) */
+    dropdownIndhold.forEach((dropdown) =>{
+      /*hvis "kassen" har class=show, så skal du fjerne den, og så lukker vores dropdown "kasse" */
+      if (dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
+      }
+    });
+  }
+}
+
+
   /*dropdown animation.. virker ikke!!! OBS nodelist.. skal loopes igennem!*/
   // const ikon = document.querySelectorAll(".animatepil");
   // ikon.forEach((ikon) =>{

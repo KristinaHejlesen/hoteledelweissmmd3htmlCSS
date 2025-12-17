@@ -50,9 +50,12 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    background-color: var(--backgroundColor);
-}
+  }
 
+main{
+  background-color: var(--backgroundColor);
+
+}
 h1, h2, h3, h4, a, button{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
@@ -114,9 +117,10 @@ section{
     box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-nav button, a{
+nav button, nav a{
     font-size: 1.5rem;
     color: var(--textColor);
+    background-color: var(--backgroundColor);
 }
  nav a:hover,
  button:hover, .dropdownIndhold a:hover{
@@ -128,6 +132,7 @@ nav{
     align-items:center ;
     justify-content: space-between;
     padding-inline: var(--space_desktopMediumElementer);
+    background-color: var(--backgroundColor);
   
    
 }
@@ -194,7 +199,7 @@ nav{
     display: flex;
 }
 /*mobil nav*/
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
     #menu{
         display: flex;
         /*sørger for at burgermenu ikke forsvinder bagved*/
@@ -314,6 +319,7 @@ video{
     height: 100%;
     object-fit: cover;
     border-radius: var(--border_radius_image);
+    box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -327,11 +333,57 @@ video{
   text-align: center;
 }
 
+/*animation af pil på cards*/
+.forsidenCards:hover .animateCardpil{
+  /*for at animationen skal kunne virker, er vi nødt til at sætte den translate på da pilen blev placeret på billedet, ellers overskriver vi den og pil vil pege skråt ned af. vi tilføjer en ny translate og siger flyt dig 50% på x aksen*/
+  transform: translate(-50%, -50%) translate(50%);
+}
+
+/*anmeldelser på forsiden*/
+.anmeldelse{
+  padding-top: var(--space_mobilMediumElementer);
+}
+.anmeldelserContainer span{
+ font-size: 1rem;
+ color: var(--textColor);
+ font-weight: 600;
+}
+
+.bookicon{
+margin: 0 auto;
+font-size: 1rem;
+}
+
+/*footer*/
+footer{
+  background-color: var(--softBrown);
+  color: white;
+  padding: var(--space_mobilSmall);
+  
+}
+footer a{
+  color: white;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+footer a:hover{
+  color: var(--warmYellow);
+}
+footer div{
+  padding-bottom: var(--space_mobilSection);
+}
+footer div p{
+  font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.75rem;
+}
+
 /*desktop*/
 @media screen and (min-width: 900px) {
   /*Sørger for at indholdet ikke strækker på store skærme*/
 .contentContainer{
-  max-width: 1220px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-inline: var(--margin_desktop);
     
@@ -348,9 +400,10 @@ video{
 }
 
 .forsidenCardsTekst{
-    font-size: 3rem;
-    top: 50%;
+    font-size: 2.5rem;
+    top: 65%;
     left: 50%;
+    
 }
 .forsidenCards {
   max-width: 37rem;
@@ -358,7 +411,7 @@ video{
 }
 .fa-arrow-right-long{
     /* position: absolute; */
-    top: 70%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2.5rem;
@@ -368,7 +421,51 @@ video{
     display: flex;
     gap: var(--space_desktopMediumElementer);
 }
+/*anmeldelser sektion på forsiden*/
+.anmeldelserContainer{
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  gap: var(--space_desktopMediumElementer);
+  padding-top: var(--space_desktopMediumElementer);
+  padding-bottom: var(--space_desktopMediumElementer);
 }
+.anmeldelse{
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space_desktopMediumElementer);
+}
+.bookicon {
+  font-size: 3rem;
+}
+/*footer*/
+
+.footerContainer{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: var(--margin_desktop);
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--space_desktopMediumElementer);
+
+  img{
+    padding-bottom: 2rem;
+  }
+  
+}
+footer a{
+  font-size: var(--desktop_fs_p);
+
+}
+footer div p{
+  font-size: var(--desktop_fs_p);
+
+}
+
+}
+
+
 /*Undersider*/
 
 /*Komponenter*/
+
