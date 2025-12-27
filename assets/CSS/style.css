@@ -124,7 +124,7 @@ nav button, nav a{
     background-color: var(--backgroundColor);
 }
  nav a:hover,
- button:hover, .dropdownIndhold a:hover{
+ button.dropbtn:hover, .dropdownIndhold a:hover{
      color: var(--mossGreen);
  }
 /*Global navigation*/

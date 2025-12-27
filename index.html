@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
         integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--splidejs-->
+        <link rel="stylesheet" href="path-to-the-file/splide.min.css">
+        <script src="path-to-the-file/splide.min.js"></script>
     </head>
     
     <body>
@@ -124,17 +127,31 @@
                         
                     </div>
                 </section>
-                <section>
+                <section class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">Slide 01</li>
+                            <li class="splide__slide">Slide 02</li>
+                            <li class="splide__slide">Slide 03</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="splide" aria-label="Splide Basic HTML Example">
                     <h2>Det siger vores gæster</h2>
-                    <div class="anmeldelserContainer">
-                        <div class="anmeldelse">     
-                            <i class="fa-solid fa-book-open bookicon"></i>
-                            <p>Tak til det skønneste alpehotel!
-                                Som en del af familien for en kort stund. Vi blev mødt af en afslappende og hyggelig atmosfære fra det sekund vi trådte
-                                ind af døren. <br>
-                                <span>Familie på 4</span>
-                            </p>
-                        </div>
+                    <div class="anmeldelserContainer splide__track">
+                        <ul class="splide__list" >
+                            <li class="splide__slide" >
+                                <div class="anmeldelse">     
+                                    <i class="fa-solid fa-book-open bookicon"></i>
+                                    <p>Tak til det skønneste alpehotel!
+                                        Som en del af familien for en kort stund. Vi blev mødt af en afslappende og hyggelig atmosfære fra det sekund vi trådte
+                                        ind af døren. <br>
+                                        <span>Familie på 4</span>
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
                         <div class="anmeldelse">
                             <i class="fa-solid fa-book-open bookicon"></i>
                             <p>Tak til det skønneste alpehotel!
