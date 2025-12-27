@@ -338,6 +338,7 @@ video{
 /*anmeldelser på forsiden*/
 .anmeldelse{
   padding-top: var(--space_mobilMediumElementer);
+  padding-inline-start: var(--space_mobilMediumElementer);
 }
 .anmeldelserContainer span{
   font-size: 1rem;

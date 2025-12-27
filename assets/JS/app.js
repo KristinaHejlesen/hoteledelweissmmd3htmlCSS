@@ -52,3 +52,24 @@ window.onclick = function(luk) {
   // });
 
  
+/*splide */
+/*splider slider  1 slide billede*/
+  // document.addEventListener( 'DOMContentLoaded', function() {
+  //   const splide = new Splide( '.splide' );
+  //   splide.mount();
+  // } );
+  /*laver flere slides, obs evt tilføje DOmContentLoaded på denne også */
+  document.addEventListener( 'DOMContentLoaded', function() {
+    const splide = new Splide( '.splide', {
+    perPage: 3,
+    rewind : true,
+    /*fra splide ved 1000 px, er der kun 1 slide pr side, https://splidejs.com/tutorials/image-carousel/ */
+      breakpoints: {
+        1000: {
+          perPage: 1,
+        },
+      }
+  } );
+  /*kører splide/mounter den */
+  splide.mount();
+  });
