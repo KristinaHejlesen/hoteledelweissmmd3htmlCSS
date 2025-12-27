@@ -375,6 +375,11 @@ footer div p{
   font-style: normal;
   font-size: 0.75rem;
 }
+/*splider css til anmeldelser forsiden*/
+.splide__arrow--next{
+  right: 1rem;
+}
+
 
 /*desktop*/
 @media screen and (min-width: 900px) {
