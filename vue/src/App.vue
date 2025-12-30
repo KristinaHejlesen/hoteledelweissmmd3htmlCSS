@@ -61,16 +61,23 @@ button{
   border-radius: 0px;
 }
 li:last-child button{
-  border-radius: 0px 0px 6px;
+  border-radius: 0px 0px 6px 6px;
 }
+
 li{
     list-style-type: none;
 }
+
 ul{
     padding-inline-start: 0;
 }
+
 .accodianIndhold{
-    border: 0.09rem solid black;
-    
+    border: 0.10rem solid black;
+    padding: 1rem;
+}
+
+li:last-child .accodianIndhold{
+  border-radius: 0px 0px 6px 6px;
 }
 </style>
