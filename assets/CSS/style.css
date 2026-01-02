@@ -290,4 +290,90 @@ p {
     display: none;
 }
 
-/*Komponenter*/
+
+/* =========================
+   DESKTOP (>= 900px) – VÆRELSER
+   ========================= */
+   
+@media screen and (min-width: 900px) {
+
+  .rooms {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space_desktopSection) var(--space_desktoplargeIndhold);
+  }
+
+  .rooms__header p {
+    max-width: 85ch;
+    margin-top: var(--space_desktopMediumElementer);
+  }
+
+  /*Tabs: bred række + underline  */
+  .rooms__tabs {
+    justify-content: center;
+    gap: 30px;
+    margin: 56px 0 40px;
+    padding: 0 8px 14px;
+  }
+
+  .rooms__tabs::after {
+    opacity: 0.55;
+  }
+
+  .tab {
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    padding: 0 6px;
+    white-space: nowrap;
+  }
+
+  .tab.active::after {
+    bottom: -14px;
+    height: 3px;
+  }
+
+  /*  Cards-række desktop*/
+  .rooms__list {
+    overflow-x: auto;
+    gap: 22px;
+    padding: 0 0 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rooms__list {
+    scrollbar-width: none;
+  }
+
+  .room-card {
+    flex: 0 0 270px;
+    height: 460px;
+    scroll-snap-align: start;
+    border-radius: 16px;
+  }
+
+  .room-card__title {
+    font-size: 2.1rem;
+    line-height: 0.95;
+  }
+
+  .room-card__overlay {
+    inset: 18px;
+  }
+
+  .room-card__facts {
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  /* Spørgsmål sektion */
+  .info-box {
+    margin-top: 70px;
+    max-width: 560px;
+  }
+
+  .btn-info {
+    padding: 12px 22px;
+    gap: 14px;
+  }
+}
