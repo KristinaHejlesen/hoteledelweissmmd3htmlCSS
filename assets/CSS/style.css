@@ -100,3 +100,124 @@ p {
 /*Undersider*/
 
 /*Komponenter*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 404-side */
+.FejlSide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-40px);
+    text-align: center;
+}
+
+.FejlSide h1 {
+    font-size: 64px;
+    margin-bottom: 12px;
+}
+
+.FejlSide p {
+    max-width: 420px;
+    line-height: 1.6;
+}
+
+
+
+
