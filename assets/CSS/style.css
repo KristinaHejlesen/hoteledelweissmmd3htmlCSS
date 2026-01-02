@@ -100,3 +100,226 @@ p {
 /*Undersider*/
 
 /*Komponenter*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Job & karriere */
+
+/* OBS BODY HER HAR MARGIN, MEN KUN FOR AT TESTE LAYOUT */
+body {
+    margin: 50px;
+}
+
+h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 24px 0 12px;
+}
+
+/* Brødtekst */
+p {
+    max-width: 100%;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* Punktopstilling */
+ul {
+    margin: 10px 0 20px 16px;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Ansøgningsformular */
+form {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+/* Inputfelter */
+input {
+    width: 100%;
+    height: 36px;
+    margin-top: 6px;
+    background: #e2e2e2;
+    border: 1px solid #9c9c9c;
+    padding: 6px 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Upload-gruppe */
+.uploadGroup {
+    margin-bottom: 18px;
+}
+
+.uploadGroup span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.uploadBtn {
+    width: 100%;
+    height: 36px;
+    background: #e2e2e2;
+    border: 1px solid #9c9c9c;
+    cursor: pointer;
+}
+
+/* Ansøg-knap */
+.AnsøgBtn {
+    margin-top: 22px;
+    width: 100%;
+    height: 40px;
+    background: #e6c28f;
+    border: 1px solid #b89a6b;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+@media (min-width: 900px) {
+    h1 {
+        font-size: 32px;
+        margin: 32px 0 16px;
+    }
+
+    p {
+        max-width: 600px;
+    }
+
+    form {
+        width: 360px;
+        margin-top: 24px;
+    }
+}
