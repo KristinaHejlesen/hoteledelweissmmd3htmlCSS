@@ -100,3 +100,59 @@ p {
 /*Undersider*/
 
 /*Komponenter*/
+
+
+
+
+
+
+
+/* Kontakt */
+.kontakt {
+    padding: 1.5rem 1rem;
+}
+
+.kontakt p {
+    margin: 0.4rem 0;
+}
+
+.findVej {
+    margin-top: 2rem;
+}
+
+.kort {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+
+@media (min-width: 900px) {
+    .kontakt {
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .kontaktInfo,
+    .kontaktKort {
+        flex: 1;
+    }
+}
+
+@media (min-width: 900px) {
+    .kontakt {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+
+    .findVej {
+        margin-top: 4rem;
+    }
+
+    .kort {
+        margin-top: 2rem;
+    }
+}
