@@ -1,18 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Edeleweiss</title>
-    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faciliteter | Hotel Edelweiss</title>
+
+    <link rel="stylesheet" href="./assets/CSS/style.css" />
     <script src="./assets/JS/app.js" defer></script>
-    <!--fontawesom iconer-->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" />
 </head>
+
 <body>
-    
+    <main>
+        <!-- INTRO -->
+        <img src="./assets/img/Terasse.jpeg" alt="Terrasse med liggestole og udsigt over bjergene"
+            class="intro-billede" />
+
+        <section class="faciliteter-intro">
+            <div class="intro-tekst">
+                <h1>Faciliteter på Edelweiss</h1>
+
+                <p>
+                    Hotellet tilbyder en række faciliteter, der gør dit ophold både praktisk og behageligt.
+                    Du har fri adgang til wellness- og fitnessfaciliteter, som er velegnede til restitution efter aktive
+                    dage.
+                </p>
+
+                <p>
+                    Når solen skinner, indbyder terrassen på 1. sal til afslapning med panoramaudsigt over bjergene.
+                    Derudover tilbyder vi praktisk opbevaring af ski og udstyr, så hverdagen på bjerget bliver enkel og
+                    overskuelig.
+                </p>
+            </div>
+        </section>
+
+        <!-- WELLNESS -->
+        <section class="facilitet-sektion">
+            <div class="billed-slider">
+                <div class="slider-track">
+                    <div class="slide">
+                        <img src="./assets/img/Koldtvandskar.png" alt="Koldtvandskar" />
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/img/Wellness.jpeg" alt="Wellnessområde" />
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/img/Wellness1.jpeg" alt="Wellnessoplevelse" />
+                    </div>
+                    <!-- Der kan sættes flere billeder ind her - husk de skal være i en div med class "slide"  for at virke. Det samme gælder i sektionerne under (fitness og ski)-->
+                </div>
+
+                <div class="slider-nav">
+                    <button class="slider-pil prev" type="button">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="slider-dots">
+                        <span class="dot aktiv"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <button class="slider-pil next" type="button">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="facilitet-indhold">
+                <h2>Wellness faciliteter</h2>
+
+                <p>
+                    Vores wellnessområde er skabt til ro, varme og restitution, hvad enten du har haft en aktiv dag i
+                    bjergene
+                    eller bare har brug for at sætte tempoet ned.
+                </p>
+
+                <p>
+                    Her finder du både klassisk sauna, infrarød sauna og koldtvandskar, som kan bruges enkeltvis eller i
+                    kombination.
+                    Varmen løsner op, kulden giver et friskt boost, og du vælger selv rytmen.
+                </p>
+
+                <p>
+                    Som en del af wellnessoplevelsen tilbyder vi også Cryo Vital Body Rulle-behandling – en behandling,
+                    der kombinerer massage med nær-infrarødt lys og understøtter kroppens naturlige restitution.
+                </p>
+
+                <p>
+                    Vi tilbyder desuden sauna gus ca. én gang om ugen. Spørg i receptionen eller baren for tidspunkt.
+                </p>
+            </div>
+        </section>
+
+        <!-- FITNESS (husk omvendt på desktop) -->
+        <section class="facilitet-sektion omvendt">
+            <div class="billed-slider">
+                <div class="slider-track">
+                    <div class="slide">
+                        <img src="./assets/img/Fitness.jpeg" alt="Fitnessrum" />
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/img/Terasse.jpeg" alt="Yoga eller rolig bevægelse" />
+                    </div>
+                </div>
+
+                <div class="slider-nav">
+                    <button class="slider-pil prev" type="button">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="slider-dots">
+                        <span class="dot aktiv"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <button class="slider-pil next" type="button">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="facilitet-indhold">
+                <h2>Fitness faciliteter</h2>
+
+                <p>
+                    På hotellet har vi indrettet et lille, men veludstyret fitnessrum med kvalitetsudstyr fra Eleiko.
+                    Det er et sted for dig, der gerne vil holde kroppen i gang under opholdet, uden at det kræver mere
+                    end det, du selv har lyst til.
+                </p>
+
+                <p>
+                    Fitnessrummet er åbent hele dagen og frit tilgængeligt for alle hotellets gæster. Efter træning kan
+                    du gå
+                    direkte i bad eller fortsætte i wellnessområdet.
+                </p>
+
+                <p>
+                    Ønsker du en roligere form for bevægelse, er der mulighed for yoga enten på terrassen eller i
+                    naturen omkring hotellet,
+                    alt efter vejr og stemning.
+                </p>
+
+                <p>Du sætter tempoet. Vi har rammerne.</p>
+            </div>
+
+        </section>
+        <section class="facilitet-note fitness-note">
+            <strong>Vær opmærksom på,</strong>
+            <p>
+                At brug af wellnessområde og fitnessudstyr sker på eget ansvar. Er du gravid, har skader, lider af
+                en alvorlig sygdom
+                eller har pacemaker, bør du tale med egen læge inden du bruger faciliteterne.
+            </p>
+            <p>Husk badetøj. Håndklæder er allerede at finde i wellnessområdet.</p>
+        </section>
+
+        <!-- SKI OPBEVARING -->
+        <section class="facilitet-sektion">
+            <div class="billed-slider">
+                <div class="slider-track">
+                    <div class="slide">
+                        <img src="./assets/img/Terasse.jpeg" alt="Skirum og opbevaring af ski og støvler" />
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/img/Fitness.jpeg" alt="Støvletørrer og udstyr" />
+                    </div>
+                </div>
+
+                <div class="slider-nav">
+                    <button class="slider-pil prev" type="button">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="slider-dots">
+                        <span class="dot aktiv"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <button class="slider-pil next" type="button">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="facilitet-indhold">
+                <h2>Ski opbevaring</h2>
+
+                <p>
+                    Hotellet har et skirum, hvor du nemt og sikkert kan opbevare dit skiudstyr under dit ophold.
+                    Rummet er indrettet med opvarmet støvletørrer, så dine støvler er tørre og klar til næste dag på
+                    bjerget.
+                </p>
+
+                <p>
+                    Husk, at den gratis skibus kører direkte fra hotellet til pisterne og gør din skiferie enkel og
+                    bekvem.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="faciliteter-cta">
+            <h2>Lyder det som noget for jer? <br />Så tjek vores værelser ud!</h2>
+
+            <a href="./vaerelser.html" class="knap">
+                Se alle vores værelser og lejligheder →
+            </a>
+        </section>
+    </main>
 </body>
+
 </html>
