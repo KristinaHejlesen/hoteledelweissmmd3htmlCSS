@@ -144,6 +144,8 @@ p {
     flex-shrink: 0;
     order: 1;
     margin: 0 auto;
+    max-width: 300px;
+    max-height: 500px;
  }
 
 
