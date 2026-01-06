@@ -106,3 +106,7 @@ p {
 .ResImage{
     width: 100%;
 }
+
+body{
+    margin: 20px;
+}
