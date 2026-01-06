@@ -110,3 +110,92 @@ p {
 body{
     margin: 20px;
 }
+
+/* BILLED-SLIDER */
+.billed-slider {
+    display: grid;
+    gap: var(--space_mobilSmall);
+}
+
+/*
+  slider-track:
+  - flex: billederne ligger vandret
+  - overflow-x: auto: gør at man kan swipe
+*/
+.slider-track {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--space_mobilSmall);
+    /* Giver glidende scroll på iOS */
+    -webkit-overflow-scrolling: touch;
+    /*
+      Skjuler scrollbar:
+      - scrollbar-width: none; = Firefox
+      - ::-webkit-scrollbar = Chrome/Safari
+    */
+    scrollbar-width: none;
+}
+
+.slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    height: 290px;
+    border-radius: var(--border_radius_image);
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center 20%;
+}
+
+/* SLIDER NAV (pile + dots) */
+.slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space_mobilMediumElementer);
+}
+
+/* Pile-knapper */
+.slider-pil {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(77, 71, 67, 0.25);
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Fontawesome-ikon */
+.slider-pil i {
+    color: var(--softBrown);
+}
+
+/* Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background-color: rgba(94, 84, 74, 0.35);
+}
+
+.dot.aktiv {
+    background-color: var(--softBrown);
+}
