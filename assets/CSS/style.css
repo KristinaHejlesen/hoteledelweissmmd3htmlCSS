@@ -105,11 +105,34 @@ p {
 /* Restaurant */
 .ResImage{
     width: 100%;
+    border-radius: var(--border_radius_image);
 }
 
 body{
     margin: 20px;
 }
+
+.Res {
+    h1{
+    color: var(--textColor);
+    padding-bottom: var(--space_mobilSmall);
+    }
+    
+    h2{
+        color: var(--textColor);
+        padding-bottom: var(--space_mobilSmall);
+    }
+
+    p{
+        padding-bottom: var(--space_mobilSmall);
+    }
+
+}
+.Restaurant, .Morgenmad, .Aftensmad, .DagensMenu, .MadMedOmtanke{
+    padding: var(--space_mobilSection);
+}
+
+
 
 /* BILLED-SLIDER */
 .billed-slider {
@@ -198,4 +221,66 @@ body{
 
 .dot.aktiv {
     background-color: var(--softBrown);
+}
+
+.faciliteter-cta {
+    margin: var(--space_mobillargeIndhold);
+    padding-top: var(--space_mobillargeIndhold);
+    display: grid;
+    gap: var(--space_mobilSmall);
+    color: var(--textColor);
+}
+
+.knap {
+    font-family: "montserrat", sans-serif;
+    padding: 14px 18px;
+    background-color: var(--warmYellow);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: var(--border_radius_image);
+}
+
+@media (min-width: 900px) {
+    /* SLIDER  */
+        .slide {
+            height: 400px;
+            border-radius: var(--border_radius_image);
+        }
+    
+        .slider-nav {
+            justify-content: center;
+            gap: var(--space_desktopMediumElementer);
+            margin-top: var(--space_desktopSmall);
+        }
+    
+        .slider-dots {
+            flex: 0;
+        }
+
+        
+    .faciliteter-cta {
+            margin: var(--space_mobillargeIndhold);
+            padding-top: var(--space_mobillargeIndhold);
+            display: grid;
+            gap: var(--space_mobilSmall);
+            color: var(--textColor);
+        }
+    
+        .knap {
+            font-family: "montserrat", sans-serif;
+            padding: 14px 18px;
+            background-color: var(--warmYellow);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: var(--border_radius_image);
+        }
+    
+    
+    
+        /*  CTA */
+        .faciliteter-cta {
+            max-width: 760px;
+            margin: var(--space_desktopSection) auto 0;
+            padding: var(--space_desktoplargeIndhold);
+        }
 }
