@@ -92,11 +92,89 @@ p {
     }
 }
 
-/*buttons*/
+/* Forside komponent - leder videre til faciliteter og restaurant */
+
+.forside-link-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space_mobilMediumElementer);
+}
+
+.forside-link-header h3 {
+    font-size: var(--mobil_fs_h1);
+}
+
+.forside-links {
+    padding: var(--space_mobilSection);
+}
+
+.forside-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space_mobilMediumElementer);
+}
+
+.forside-link-kort {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space_mobilMediumElementer);
+    padding: var(--space_mobillargeIndhold);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--border_radius_image);
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+.material-symbols-outlined.forside-ikon {
+    font-size: 44px !important;
+    line-height: 1;
+    display: inline-block;
+    color: var(--softBrown);
+
+}
 
 
-/*Forsiden*/
+.forside-link-indhold {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space_mobilSmall);
+}
 
-/*Undersider*/
+.forside-link-cta {
+    margin-top: auto;
+    color: var(--softBrown);
+    font-family: "montserrat", sans-serif;
+    font-weight: 600;
+}
 
-/*Komponenter*/
+
+
+/* Desktop */
+
+@media screen and (min-width: 900px) {
+
+    .forside-links {
+        padding: var(--space_desktopSection);
+        max-width: 1440px;
+    }
+
+    .forside-links-grid {
+        gap: var(--space_desktoplargeIndhold);
+    
+    }
+
+    .forside-link-kort {
+        padding: var(--space_desktoplargeIndhold);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        max-width: 600px;
+    }
+
+    .forside-link-kort:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .forside-link-cta {
+        font-size: 1.1rem;
+    }
+}
