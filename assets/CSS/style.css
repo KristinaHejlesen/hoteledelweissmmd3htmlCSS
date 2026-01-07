@@ -49,6 +49,7 @@
     box-sizing: border-box;
     margin: 0;
     background-color: var(--backgroundColor);
+    color: var(--textColor);
 }
 
 h1, h2, h3, h4{
@@ -103,69 +104,95 @@ p {
 
 
 /* Restaurant */
-.ResImage, .ResImageHero{
+
+/* Hero og billeder */
+.ResImage,
+.ResImageHero,
+.ResImageAften {
     width: 100%;
-    border-radius: var(--border_radius_image);
+    display: block;
+    object-fit: cover;
 }
 
-body{
-    margin: 20px;
-}
-
-.Res {
-    h1{
-    color: var(--textColor);
+.Res h1 {
     padding-bottom: var(--space_mobilSmall);
-    }
-    
-    h2{
-        color: var(--textColor);
-        padding-bottom: var(--space_mobilSmall);
-    }
-
-    p{
-        padding-bottom: var(--space_mobilSmall);
-    }
-
 }
-.Restaurant, .Morgenmad, .Aftensmad, .DagensMenu, .MadMedOmtanke{
+
+.Res h2 {
+    padding-bottom: var(--space_mobilSmall);
+}
+
+.Res p {
+    padding-bottom: var(--space_mobilSmall);
+}
+
+.Restaurant,
+.MadMedOmtanke {
     padding: var(--space_mobilSection);
 }
 
+/* Hver MadSektion står for sig (morgen/aften/menu) */
+.MadSektion {
+    padding: var(--space_mobilSection);
+    display: grid;
+    gap: var(--space_mobilMediumElementer);
+}
 
+/* Billede “kort” */
+.MadImg {
+    border-radius: var(--border_radius_image);
+    overflow: hidden;
+}
 
-/* BILLED-SLIDER */
-.billed-slider {
+.MadImg img {
+    width: 100%;
+    height: 260px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Tekst */
+.MadTekst {
     display: grid;
     gap: var(--space_mobilSmall);
 }
 
-/*
-  slider-track:
-  - flex: billederne ligger vandret
-  - overflow-x: auto: gør at man kan swipe
-*/
+.MadTekst h3 {
+    font-size: large;
+}
+
+/* SLIDER genbrugt fra faciliteter siden */
+
+.billed-slider {
+    display: grid;
+    gap: var(--space_mobilSmall);
+    padding: var(--space_mobilSection) 0;
+}
+
 .slider-track {
     display: flex;
     overflow-x: auto;
     gap: var(--space_mobilSmall);
-    /* Giver glidende scroll på iOS */
+
+    /* NOTE:
+       -webkit-overflow-scrolling: touch;
+       Gør scroll “smooth” på iOS (iPhone/iPad).
+       Det er ikke farligt. Det forbedrer bare følelsen. */
     -webkit-overflow-scrolling: touch;
-    /*
-      Skjuler scrollbar:
-      - scrollbar-width: none; = Firefox
-      - ::-webkit-scrollbar = Chrome/Safari
-    */
+
+    /* NOTE:
+       scrollbar-width: none; skjuler scrollbar i Firefox */
     scrollbar-width: none;
 }
 
+/* NOTE:
+   ::-webkit-scrollbar rammer Chrome/Safari/Edge for at skjule scrollbar */
 .slider-track::-webkit-scrollbar {
     display: none;
 }
 
 .slide {
     flex: 0 0 100%;
-    scroll-snap-align: start;
     height: 290px;
     border-radius: var(--border_radius_image);
     overflow: hidden;
@@ -176,45 +203,42 @@ body{
     height: 100%;
     object-fit: cover;
     display: block;
-    object-position: center 20%;
+    object-position: center 50%;
 }
 
-/* SLIDER NAV (pile + dots) */
 .slider-nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space_mobilMediumElementer);
+    padding: 0 25px;
+    
 }
 
-/* Pile-knapper */
 .slider-pil {
-    width: 44px;
-    height: 44px;
+    width: 54px;
+    height: 54px;
     border-radius: 999px;
     display: grid;
     place-items: center;
-    border: 1px solid rgba(77, 71, 67, 0.25);
+    border: 1px solid rgba(77, 71, 67, 0.622);
     cursor: pointer;
     padding: 0;
+    background-color: var(--backgroundColor);
 }
 
-/* Fontawesome-ikon */
 .slider-pil i {
     color: var(--softBrown);
 }
 
-/* Dots */
 .slider-dots {
     display: flex;
+    padding-top: var(--space_mobilMediumElementer);
     justify-content: center;
-    gap: 10px;
+    gap: 14px;
     flex: 1;
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 999px;
     background-color: rgba(94, 84, 74, 0.35);
 }
@@ -223,96 +247,126 @@ body{
     background-color: var(--softBrown);
 }
 
+/* CTA videre til værd at vide */
+
 .faciliteter-cta {
-    margin: var(--space_mobillargeIndhold);
-    padding-top: var(--space_mobillargeIndhold);
-    display: grid;
+    margin-left: var(--space_mobilSection);
     gap: var(--space_mobilSmall);
-    color: var(--textColor);
 }
 
 .knap {
-    font-family: "montserrat", sans-serif;
-    padding: 14px 18px;
+    font-family: "Montserrat", sans-serif;
+    max-width: 260px;
+    padding: 19px 24px;
     background-color: var(--warmYellow);
     color: #ffffff;
     text-decoration: none;
     border-radius: var(--border_radius_image);
+    display: inline-block;
+    margin-bottom: var(--space_mobillargeIndhold);
 }
+
+/* DESKTOP MEDIA QUERIES */
 
 @media (min-width: 900px) {
     main {
-        max-width: 1200px;
+        max-width: 1440px;
         margin: 0 auto;
-        padding: var(--space_desktopSection);
+        padding: var(--space_desktopSection) var(--space_desktoplargeIndhold);
     }
 
-    /*  INTRO */
-    .Restaurant{
+    .Restaurant {
         padding: 0;
         margin-bottom: var(--space_desktopSection);
         max-width: 760px;
     }
 
-   .ResImageHero{
-    width: 100%;
-    height: 640px;
-   }
-
-    .Restaurant p {
-        gap: var(--space_desktopMediumElementer);
-    }
-
-    /* FACILITET-SEKTIONER (2 kolonner) */
-  .MadSektion {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space_desktoplargeIndhold);
-      align-items: start;
-      margin-bottom: var(--space_desktopSection);
-  }
-
-  .MadImg img {
-      width: 100%;
-      height: auto;
-      border-radius: var(--border_radius_image);
-  }
-
-  .MadTekst {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-  }
-
-
-    /* SLIDER  */
-    .slide {
-        height: 00px;
+    .ResImageHero {
+        width: 100%;
+        height: 640px;
         border-radius: var(--border_radius_image);
     }
 
+    .MadSektion {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: var(--space_desktoplargeIndhold);
+        align-items: start;
+        padding: var(--space_desktopSection) 0;
+    }
+
+    /* Vend Aftensmad */
+    .MadSektion.omvendt .MadImg {
+        order: 2;
+    }
+
+    .MadSektion.omvendt .MadTekst {
+        order: 1;
+    }
+
+    .MadImg img {
+        height: 460px;
+        border-radius: var(--border_radius_image);
+    }
+
+    .MadTekst h3 {
+        font-size: var(--desktop_fs_h3)
+    }
+
+.MadMedOmtanke {
+        max-width: 760px;
+        padding: 0;
+        margin-top: var(--space_desktopSection);
+    }
+
+    /* Slider desktop */
+    .billed-slider {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    .slide {
+        height: 500px;
+        ;
+    }
+
     .slider-nav {
+        max-width: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
         justify-content: center;
         gap: var(--space_desktopMediumElementer);
-        margin-top: var(--space_desktopSmall);
     }
 
     .slider-dots {
         flex: 0;
+        
     }
 
-    /*  TEKST INDHOLD  */
-    .Restaurant {
-        display: grid;
-        gap: var(--space_desktopMediumElementer);
-        max-width: 520px;
-    }
-
-
-    /*  CTA */
-    .faciliteter-cta {
+    .MadMedOmtanke {
         max-width: 760px;
-        margin: var(--space_desktopSection) auto 0;
-        padding: var(--space_desktoplargeIndhold);
+        padding: 0;
+        margin-top: var(--space_desktopSection);
+    }
+
+    .billed-slider {
+        max-width: 1440px;
+        padding: var(--space_desktopMediumElementer) 0;
+    }
+
+    .faciliteter-cta {
+        margin-left: 0;
+    }
+
+    .faciliteter-cta .knap {
+        margin-top: var(--space_desktopSmall);
+        width: 500px;
+    }
+
+    .faciliteter-cta a {
+        font-size: var(--desktop_fs_p)
     }
 }
