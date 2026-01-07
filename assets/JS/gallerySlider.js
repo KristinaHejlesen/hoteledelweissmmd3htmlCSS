@@ -10,16 +10,22 @@ if (slider) {
   const btnLeft = slider.querySelector('.image-arrow--left');
   const btnRight = slider.querySelector('.image-arrow--right');
 
-  // Henter billedernes sti fra data-images attribut og laver dem om til et array
+   // Henter billedernes sti fra data-images attributten.
+  // Eksempel: data-images="img1.jpg, img2.jpg, img3.jpg". Det bliver først lavet om til en tekst, så splittet ved komma og trimmet for mellemrum
   const images = (slider.dataset.images || '')
-    .split(',')
-    .map(s => s.trim())
-    .filter(Boolean);
+    .split(',')            // laver teksten om til et array af strings ved komma
+    .map(s => s.trim())      // fjerner evt. mellemrum før/efter hver sti
+    .filter(Boolean);    // fjerner tomme værdier fra arrayet
 
-  // Hvis der ikke er flere billeder, bruger vi det første som allerede er i HTMLen
+
+    // Hvis der ikke blev fundet nogen billedstier i data-images attributten fx hvis den mangler, er tom eller forkert udfyldt OG hvis der allerede ligger et billede i selve HTML'en, så bruger vi det billede som fallback, så slideren stadig fungerer. Det her gør slideren robust og forhindrer at den går i stykker, hvis der mangler data eller sker fejl .
   if (images.length === 0 && imgEl?.getAttribute('src')) {
+
+    // Her gemmer vi det eksisterende billede fra HTML'en i images-arrayet,
+    // så resten af slider-logikken kan arbejde videre som normalt.
     images.push(imgEl.getAttribute('src'));
   }
+
 //Holder styr på hvilket billede der vises lige nu
   let index = 0;
 
