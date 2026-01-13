@@ -5,97 +5,536 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*variabler*/
-:root{
+:root {
     /*Farve variabler*/
     --softBrown: #5E544A;
     --backgroundColor: #F3EFE7;
     --textColor: #4D4743;
     --mossGreen: #566A5A;
     --warmYellow: #E0BF90;
-    
+
     /*spacing variabler*/
     --space_mobilSmall: 8px;
     --space_mobilMediumElementer: 16px;
     --space_mobillargeIndhold: 24px;
     --space_mobilSection: 32px;
-    
-    /*omdøm så det passer med figma*/
+    --margin_mobil: 0.625rem;
+
+    /*desktop*/
     --space_desktopSmall: 15px;
     --space_desktopMediumElementer: 25px;
     --space_desktoplargeIndhold: 50px;
     --space_desktopSection: 75px;
-    
+    --margin_desktop: 7.5rem;
+
     /*Font sizes*/
     --mobil_fs_h1: 1.5rem;
     --mobil_fs_h2: 1.25rem;
     --mobil_fs_h3: 1rem;
     --mobil_fs_p: 1rem;
-    
+
     --desktop_fs_h1: 3.5rem;
     --desktop_fs_h2: 3rem;
     --desktop_fs_h3: 2.5rem;
     --desktop_fs_p: 1.125rem;
 
     /*Font styles*/
-    
+
     /*border radius*/
     --border_radius_image: 5px;
-    
-    
+
+
 }
 
 /*Generelt styling*/
-*{
+* {
     box-sizing: border-box;
     margin: 0;
-    background-color: var(--backgroundColor);
 }
 
-h1, h2, h3, h4{
+main {
+    background-color: var(--backgroundColor);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+button {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-
-
 h1 {
     font-size: var(--mobil_fs_h1);
+    padding-top: var(--space_mobilSection);
 }
 
 h2 {
     font-size: var(--mobil_fs_h2);
+    padding-top: var(--space_mobilSection);
 }
 
 h3 {
     font-size: var(--mobil_fs_h3);
+    padding-top: var(--space_mobilSection);
 }
 
 p {
     font-family: "Montserrat", sans-serif;
     font-size: var(--mobil_fs_p);
+    padding-top: var(--space_mobilSmall);
+    line-height: 150%;
 }
 
-@media  screen and (min-width: 900px) {
-    h1{
+@media screen and (min-width: 900px) {
+    h1 {
         font-size: var(--desktop_fs_h1);
+        padding-top: var(--space_desktopSection);
     }
-    h2{
-        font-size: var(--desktop_fs_h2) ;
+
+    h2 {
+        font-size: var(--desktop_fs_h2);
+        padding-top: var(--space_desktopSection);
+
     }
-    h3{
+
+    h3 {
         font-size: var(--desktop_fs_h3);
+        padding-top: var(--space_desktopSection);
     }
-    p{
+
+    p {
         font-family: "Montserrat", sans-serif;
         font-size: var(--desktop_fs_p);
+        padding-top: var(--space_desktopSmall);
     }
+}
+
+section {
+    margin-inline: var(--margin_mobil);
 }
 
 /*buttons*/
+.btn_book {
+    background-color: var(--mossGreen);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 
+nav button,
+nav a {
+    font-size: 1.5rem;
+    color: var(--textColor);
+    background-color: var(--backgroundColor);
+}
+
+nav a:hover,
+button.dropbtn:hover,
+.dropdownIndhold a:hover {
+    color: var(--mossGreen);
+}
+
+/*Global navigation*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--space_desktopMediumElementer);
+    background-color: var(--backgroundColor);
+
+
+}
+
+.globalNav {
+    display: flex;
+
+    a {
+        text-decoration: none;
+        color: var(--textColor);
+    }
+}
+
+#menu {
+    display: none;
+    border: none;
+}
+
+.navcontainer {
+    ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    li {
+        list-style-type: none;
+    }
+}
+
+.dropdownIndhold {
+    display: none;
+    flex-direction: column;
+    /*vi placere dropdown indholdet i toppen og til venstre*/
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /*sætter width til 100% så den følger knappens bredde i dropdown*/
+    width: 100%;
+    background-color: var(--backgroundColor);
+    border-radius: 5px;
+    /*skjuler alt der er udenfor boksen f.eks div, der gør så border-radius ikke kan ses.*/
+    overflow: hidden;
+    z-index: 1000;
+
+    a {
+        /* border: solid 2px var(--textColor); */
+        border-bottom: solid 1px var(--textColor);
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+        padding: 1rem;
+    }
+}
+
+/*VIKER IKKE ENDNU!*/
+/*functionel animation pil ikon skifter  dropdown menu*/
+.dropdownAnimation {
+    transform: rotate(270deg);
+}
+
+/**/
+
+.dropdown {
+    position: relative;
+
+}
+
+.dropbtn {
+    border: none;
+}
+
+/*class der sættes på dropdown links div, når der klikkes på knappen*/
+.show {
+    display: flex;
+}
+
+/*mobil nav*/
+@media screen and (max-width: 1000px) {
+    #menu {
+        display: flex;
+        /*sørger for at burgermenu ikke forsvinder bagved*/
+        z-index: 1000;
+    }
+
+    .globalNav {
+        display: none;
+
+    }
+
+    .globalNav.active {
+        display: flex;
+    }
+
+    .navcontainer ul {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 0%;
+        width: 70%;
+        background-color: var(--warmYellow);
+        padding: 1rem;
+        z-index: 1000;
+        border-radius: 0 0 0 5px;
+
+        li,
+        a,
+        .dropbtn,
+        .dropdown,
+        .fa-solid {
+            background-color: var(--warmYellow);
+        }
+    }
+
+    /*vælger den første li i ul og tilføjer padding så links rykkes længere ned*/
+    .navcontainer ul li:first-of-type {
+        padding-top: 3.5rem;
+    }
+
+    nav {
+        align-items: center;
+        padding-top: 1.25rem;
+    }
+
+    /*så den ikke går over indholdet, men skubber indholdet ned i menuen på mobil*/
+    .dropdownIndhold {
+        position: relative;
+    }
+
+    /*book knap forsiden*/
+    .btn_book {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    }
+
+    /*sikre at vores dropdown btn står pænt til venstre, sammen med de andre links*/
+    .dropbtn {
+        padding-left: 0;
+    }
+
+    /*animation af menu fra tre streger til kryds*/
+    #linje1,
+    #linje2,
+    #linje3 {
+        transition: transform;
+        /*animationen skal foregå fra midten/centrum*/
+        transform-origin: center;
+    }
+
+    /*rotere 45 grader og flyt 5 px ned*/
+    #menu.active #linje1 {
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    /*gør linjen usynlig*/
+    #menu.active #linje2 {
+        opacity: 0;
+    }
+
+    #menu.active #linje3 {
+        transform: translateY(-5px) rotate(-45deg);
+    }
+
+    #menu.active svg {
+        background-color: var(--warmYellow);
+    }
+
+    #menu.active {
+        background-color: var(--warmYellow);
+    }
+
+    #logo {
+        width: 30vw;
+    }
+}
 
 /*Forsiden*/
+.heroimage {
+    max-width: 100%;
+    max-height: 75vh;
+}
+
+/*videoen fylder 100% af div heroimage den er i*/
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*Forsiden cards sektion Oplevelser mobil*/
+.forsidenCardsTekst {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: none;
+    color: white;
+}
+
+.fa-arrow-right-long {
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    font-size: 0.625rem;
+}
+
+.forsidenCards {
+    width: 100%;
+    /*aspect-ratio beskriver forholdet - bredde/højde forholdet*/
+    aspect-ratio: 3 / 2;
+    position: relative;
+
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--border_radius_image);
+        box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.forsidenCardsTekst {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*sætter tetksten i midten, istedet for det foørste bogstav*/
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+/*anmeldelser på forsiden*/
+.anmeldelse {
+    padding-top: var(--space_mobilMediumElementer);
+    padding-inline-start: var(--space_mobilMediumElementer);
+}
+
+.anmeldelserContainer span {
+    font-size: 1rem;
+    color: var(--textColor);
+    font-weight: 600;
+}
+
+.bookicon {
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+/*footer*/
+footer {
+    background-color: var(--softBrown);
+    color: white;
+    padding: var(--space_mobilSmall);
+
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+footer a:hover {
+    color: var(--warmYellow);
+}
+
+footer div {
+    padding-bottom: var(--space_mobilSection);
+}
+
+footer div p {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.75rem;
+}
+
+/*splider css til anmeldelser forsiden*/
+.splide__arrow--next {
+    right: 1rem;
+}
+
+
+/*desktop*/
+@media screen and (min-width: 900px) {
+
+    /*Sørger for at indholdet ikke strækker på store skærme*/
+    .contentContainer {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-inline: var(--margin_desktop);
+
+    }
+
+    .heroimage {
+        max-width: 100%;
+        height: 80vh;
+    }
+
+    #introtekstForsiden {
+        max-width: 50rem;
+    }
+
+    #h1_forsiden {
+        padding-top: var(--space_desktopMediumElementer);
+    }
+
+    .forsidenCardsTekst {
+        font-size: 2.5rem;
+        top: 65%;
+        left: 50%;
+
+    }
+
+    .forsidenCards {
+        max-width: 37rem;
+        position: relative;
+    }
+
+    .fa-arrow-right-long {
+        /* position: absolute; */
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.5rem;
+    }
+
+    /*animation af pil på cards*/
+    .forsidenCards:hover .animateCardpil {
+        /*for at animationen skal kunne virker, er vi nødt til at sætte den translate på da pilen blev placeret på billedet, ellers overskriver vi den og pil vil pege skråt ned af. vi tilføjer en ny translate og siger flyt dig 50% på x aksen*/
+        transform: translate(-50%, -50%) translate(50%);
+    }
+
+    .forsidenContainerCards {
+        display: flex;
+        gap: var(--space_desktopMediumElementer);
+    }
+
+    /*anmeldelser sektion på forsiden*/
+    .anmeldelserContainer {
+        display: flex;
+        /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+        gap: var(--space_desktopMediumElementer);
+        padding-top: var(--space_desktopMediumElementer);
+        padding-bottom: var(--space_desktopMediumElementer);
+    }
+
+    .anmeldelse {
+        display: flex;
+        flex-direction: column;
+        padding-top: var(--space_desktopMediumElementer);
+    }
+
+    .bookicon {
+        font-size: 3rem;
+    }
+
+    /*footer*/
+
+    .footerContainer {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-inline: var(--margin_desktop);
+        display: flex;
+        justify-content: space-between;
+        padding-top: var(--space_desktopMediumElementer);
+
+        img {
+            padding-bottom: 2rem;
+        }
+
+    }
+
+    footer a {
+        font-size: var(--desktop_fs_p);
+
+    }
+
+    footer div p {
+        font-size: var(--desktop_fs_p);
+
+    }
+
+}
+
 
 /*Undersider*/
 
